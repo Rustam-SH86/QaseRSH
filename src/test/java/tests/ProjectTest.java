@@ -1,16 +1,20 @@
-import org.openqa.selenium.By;
+package tests;
+
+
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-public class ProjectTest extends BaseTest{
+public class ProjectTest extends BaseTest {
+    @Test
+    public void logIn() {
+        logInStep.logIn();
+    }
     @Test
     public void createProject() {
-        open("https://app.qase.io/");
-        $("[name=email]").setValue("sam024513@gmail.com");
-        $("[name=password]").setValue("01101982adam");
-        $(byText("Sigh in")).click();
+        createNewProjectStep.createNewProject();
+    }
+    @Test
+    public void deleteProject() {
+        deleteProjectStep.deleteProject("Rustam");
     }
 }
