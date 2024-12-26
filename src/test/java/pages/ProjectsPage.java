@@ -1,11 +1,11 @@
 package pages;
 
+import DTO.ProjectDTO;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,22 +16,28 @@ public class ProjectsPage {
     public SelenideElement projectNameField = $("#project-name");
     public SelenideElement projectCodeField = $("#project-code");
     public SelenideElement createProjectButton = $(byText("Create project"));
+    @Getter
+    private ProjectDTO project;
 
     public ProjectsPage openPage() {
         open("projects");
         return this;
     }
+
     public void waitTillOpened() {
         $(byText("Create new project")).shouldBe(Condition.exist).shouldBe(visible);
     }
-    public void createNewProject() {
+
+    public void createNewProject(ProjectDTO project) {
+        this.project = project;
         createNewProjectButton.shouldBe(visible).click();
-        projectNameField.shouldBe(visible).setValue("Rustam");
-        projectCodeField.shouldBe(visible).setValue("123");
+        projectNameField.shouldBe(visible).setValue(project.getProjectName());
+        projectCodeField.shouldBe(visible).setValue(project.getProjectCode());
         createProjectButton.shouldBe(Condition.enabled).click();
     }
-    public void deleteProject(String projectName) {
-        $(byText(projectName))
+
+    public void deleteProject(ProjectDTO project) {
+        $(byText(project.getProjectName()))
                 .ancestor("tr")
                 .find("button[aria-label='Open action menu']")
                 .click();

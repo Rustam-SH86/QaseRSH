@@ -2,7 +2,6 @@ package steps;
 
 import pages.LoginPage;
 import pages.ProjectsPage;
-import tests.BaseTest;
 
 public class LogInStep {
     LoginPage loginPage;
@@ -12,9 +11,10 @@ public class LogInStep {
         this.loginPage = loginPage;
         this.projectsPage = projectsPage;
     }
-    public  void logIn() {
+
+    public void logIn() {
         loginPage.openPage();
-       // projectsPage.waitTillOpened();
+        // projectsPage.waitTillOpened();
         loginPage.login();
     }
 }

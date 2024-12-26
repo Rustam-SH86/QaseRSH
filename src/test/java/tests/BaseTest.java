@@ -18,13 +18,13 @@ import steps.LogInStep;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
-    private LoginPage loginPage;
-    private ProjectsPage projectsPage;
-    private TestCasePage testCasePage;
     public LogInStep logInStep;
     public CreateNewProjectStep createNewProjectStep;
     public DeleteProjectStep deleteProjectStep;
     public CreateNewTestCaseStep createNewTestCaseStep;
+    protected ProjectsPage projectsPage;
+    protected TestCasePage testCasePage;
+    private LoginPage loginPage;
 
     @BeforeMethod
     public void setup() {
@@ -45,15 +45,16 @@ public class BaseTest {
         testCasePage = new TestCasePage();
 
         logInStep = new LogInStep(loginPage, projectsPage);
-        createNewProjectStep = new CreateNewProjectStep(projectsPage,loginPage);
-        deleteProjectStep = new DeleteProjectStep(projectsPage,loginPage);
-        createNewTestCaseStep = new CreateNewTestCaseStep(projectsPage,loginPage,testCasePage);
+        createNewProjectStep = new CreateNewProjectStep(projectsPage, loginPage);
+        deleteProjectStep = new DeleteProjectStep(projectsPage, loginPage);
+        createNewTestCaseStep = new CreateNewTestCaseStep(projectsPage, loginPage, testCasePage, createNewProjectStep);
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(true)
         );
     }
+
     @AfterMethod(alwaysRun = true)
     public void close() {
         closeWebDriver();

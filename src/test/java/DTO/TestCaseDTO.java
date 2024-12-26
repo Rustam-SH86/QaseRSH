@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class TestCase {
+public class TestCaseDTO {
     private String Status;
     private String Type;
     private String Severity;
@@ -15,7 +15,4 @@ public class TestCase {
     private String Priority;
     private String IsFlaky;
     private String AutomationStatus;
-
-
-
 }

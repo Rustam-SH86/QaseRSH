@@ -1,20 +1,22 @@
 package steps;
 
+import DTO.ProjectDTO;
 import pages.LoginPage;
 import pages.ProjectsPage;
 
 public class DeleteProjectStep {
-    ProjectsPage projectsPage;
-    LoginPage loginPage;
+    private final ProjectsPage projectsPage;
+    private final LoginPage loginPage;
 
     public DeleteProjectStep(ProjectsPage projectsPage, LoginPage loginPage) {
         this.projectsPage = projectsPage;
         this.loginPage = loginPage;
     }
-    public void deleteProject(String projectName) {
+
+    public void deleteProjectStep(ProjectDTO project) {
         projectsPage.openPage();
         loginPage.login();
-        projectsPage.deleteProject(projectName);
-
+        projectsPage.deleteProject(project);
     }
 }
+
