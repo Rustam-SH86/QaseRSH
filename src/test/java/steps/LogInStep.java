@@ -14,7 +14,6 @@ public class LogInStep {
 
     public void logIn() {
         loginPage.openPage();
-        // projectsPage.waitTillOpened();
         loginPage.login();
     }
 }
