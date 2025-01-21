@@ -1,13 +1,11 @@
 package tests.api.tests;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import tests.api.adapters.ProjectApi;
 import tests.api.models.CreateProjectQase;
 import tests.api.models.CreateProjectResponse;
 import tests.api.models.DeleteProjectResponse;
-
 import static org.testng.Assert.*;
 
 public class ProjectApiTest {

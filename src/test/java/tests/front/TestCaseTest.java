@@ -4,12 +4,8 @@ import DTO.ProjectDTO;
 import DTO.TestCaseDTO;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.testng.Tag;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import tests.api.adapters.ProjectApi;
-import tests.front.BaseTest;
-
-import static com.codeborne.selenide.Selenide.$;
 
 
 public class TestCaseTest extends BaseTest {

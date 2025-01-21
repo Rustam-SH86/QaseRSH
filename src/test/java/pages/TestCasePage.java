@@ -4,14 +4,12 @@ import DTO.ProjectDTO;
 import DTO.TestCaseDTO;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import wrappers.Picklist;
 
 import static com.codeborne.selenide.Selenide.$;
+
 
 
 @Log4j2

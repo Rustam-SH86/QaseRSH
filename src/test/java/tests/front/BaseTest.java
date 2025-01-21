@@ -6,12 +6,10 @@ import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import pages.ProjectsPage;
@@ -21,7 +19,6 @@ import steps.CreateNewTestCaseStep;
 import steps.DeleteProjectStep;
 import steps.LogInStep;
 import utils.TestListener;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 @Listeners(TestListener.class)

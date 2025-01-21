@@ -37,7 +37,6 @@ public class ProjectApi {
                 .extract()
                 .as(CreateProjectResponse.class);
     }
-
     public static DeleteProjectResponse deleteProject(String code) {
         log.info("Send API request for deleting new project");
         return given()

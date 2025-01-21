@@ -5,7 +5,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-
 @Log4j2
 public class LoginPage {
     private static final String USER = "[name=email]",
