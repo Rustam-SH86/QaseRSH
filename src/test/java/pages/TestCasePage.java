@@ -37,6 +37,4 @@ public class TestCasePage {
         new Picklist("Automation status").selectOptions(testCaseDTO.getAutomationStatus());
         saveCaseButton.click();
     }
-
-
 }

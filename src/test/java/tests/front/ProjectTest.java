@@ -33,6 +33,7 @@ public class ProjectTest extends BaseTest {
                     .build();
             createNewProjectStep.createNewProject(project);
             projectsPage.isProjectCreated(project).shouldBe(Condition.visible);
+
         } finally {
             ProjectApi.deleteProject("QAB");
         }
@@ -73,5 +74,9 @@ public class ProjectTest extends BaseTest {
                 .build();
         deleteProjectStep.deleteProjectStep(project);
         projectsPage.isProjectCreated(project).shouldNot(Condition.visible);
+                .projectCode("QA")
+                .build();
+        deleteProjectStep.deleteProjectStep(project);
+        projectsPage.deletedProjectElement(project.getProjectName()).shouldNot(Condition.visible);
     }
 }
