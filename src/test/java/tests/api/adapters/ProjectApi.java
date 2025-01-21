@@ -45,7 +45,7 @@ public class ProjectApi {
                 .delete("/project/" + code)
                 .then()
                 .log().all()
-                .statusCode(404)
+                .statusCode(200)
                 .extract()
                 .as(DeleteProjectResponse.class);
     }

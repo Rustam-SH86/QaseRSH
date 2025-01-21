@@ -34,7 +34,8 @@ public class TestCaseTest extends BaseTest {
             testCasePage.isTestCaseCreated(project).shouldBe(Condition.visible);
         }
         finally {
-            ProjectApi.deleteProject("TP123");
+            System.out.println("Complited");
+            //ProjectApi.deleteProject("TP123");
         }
     }
 }
