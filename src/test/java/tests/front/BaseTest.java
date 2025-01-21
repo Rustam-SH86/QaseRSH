@@ -44,7 +44,7 @@ public class BaseTest {
             options.addArguments("--incognito");
             Configuration.browserCapabilities = options;
             Configuration.browser = "chrome";
-            Configuration.headless = false;
+            Configuration.headless = true;
             Configuration.timeout = 100000;
             Configuration.clickViaJs = true;
             Configuration.baseUrl = "https://app.qase.io/";
