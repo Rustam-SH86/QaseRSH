@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import tests.api.adapters.ProjectApi;
 
 
-
 public class TestCaseTest extends BaseTest {
     @Test(testName = "Создание нового тест-кейса", description = "Сначала создаем новый проект и далее новый тест-кейс, в конце " +
             "удаляем проект через API")
