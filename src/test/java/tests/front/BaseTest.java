@@ -38,7 +38,7 @@ public class BaseTest {
     @Parameters({"browser"})
     @BeforeMethod
     @Step("Открытие браузера")
-    public void setup(@Optional("chrome") String browser, ITestContext context) {
+    public void setup(@Optional("safari") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);

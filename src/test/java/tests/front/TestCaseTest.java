@@ -33,7 +33,7 @@ public class TestCaseTest extends BaseTest {
                     .AutomationStatus("Automated")
                     .build();
             testCasePage.createTestCase(testCaseDTO);
-            testCasePage.isTestCaseCreated(project.getProjectCode()).shouldBe(Condition.visible);
+            testCasePage.isTestCaseCreated(project).shouldBe(Condition.visible);
         }
         finally {
             ProjectApi.deleteProject("TP123");

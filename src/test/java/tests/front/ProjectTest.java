@@ -32,7 +32,7 @@ public class ProjectTest extends BaseTest {
                     .projectCode("QAB")
                     .build();
             createNewProjectStep.createNewProject(project);
-            projectsPage.createdProjectElement(project.getProjectName()).shouldNot(Condition.visible);
+            projectsPage.isProjectCreated(project).shouldBe(Condition.visible);
         } finally {
             ProjectApi.deleteProject("QAB");
         }
@@ -68,9 +68,10 @@ public class ProjectTest extends BaseTest {
     @Test(testName = "Удаление проекта UI", description = "Удаляем проект по кнопке Remove")
     public void deleteProject() {
         ProjectDTO project = ProjectDTO.builder()
+                .projectName("TestProject")
                 .projectCode("QA")
                 .build();
         deleteProjectStep.deleteProjectStep(project);
-        projectsPage.deletedProjectElement(project.getProjectName()).shouldNot(Condition.visible);
+        projectsPage.isProjectCreated(project).shouldNot(Condition.visible);
     }
 }

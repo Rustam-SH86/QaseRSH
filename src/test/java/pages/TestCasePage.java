@@ -19,11 +19,12 @@ public class TestCasePage {
     public SelenideElement createNewCaseButton = $(By.xpath("//span[text() = 'Create new case']"));
     public SelenideElement saveCaseButton = $(By.id("save-case"));
     public SelenideElement titleField = $("#title");
-    public SelenideElement isTestCaseCreated(String projectCode) {
-        return $(By.cssSelector("a[aria-label='Open the test case " + projectCode + "-1']"));
-    }
+    public SelenideElement isTestCaseCreated(ProjectDTO projectDTO) {
+     return $(By.cssSelector("a[aria-label='Open the test case " + projectDTO.getProjectCode() + "-1']"));
+   }
 
     public void createTestCase(TestCaseDTO testCaseDTO) {
+        log.info("Create new test case");
         createNewCaseButton.shouldBe(Condition.visible).click();
         titleField.shouldBe(Condition.visible).setValue("Creation of test case");
         new Picklist("Status").selectOptions(testCaseDTO.getStatus());
@@ -36,5 +37,6 @@ public class TestCasePage {
         new Picklist("Automation status").selectOptions(testCaseDTO.getAutomationStatus());
         saveCaseButton.click();
     }
+
 
 }
