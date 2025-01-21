@@ -13,7 +13,7 @@ import static org.testng.Assert.*;
 
 public class ProjectTest extends BaseTest {
     @Test(testName = "Авторизация", description = "Авторизация валидными данными")
-    @Tag("Smoke")
+    //@Tag("Smoke")
     public void logIn() {
         logInStep.logIn();
         String pageTitle = Selenide.title();
@@ -21,7 +21,7 @@ public class ProjectTest extends BaseTest {
         assertEquals(pageTitle, "Qase", "Title does not match!");
     }
 
-    @Tag("Smoke")
+   // @Tag("Smoke")
     @Test(testName = "Создание проекта UI", description = "Создаем новый проект и после удаляем его через API")
     public void createProject() {
         try {
@@ -37,7 +37,7 @@ public class ProjectTest extends BaseTest {
         }
     }
 
-    @Tag("Smoke")
+   // @Tag("Smoke")
     @Test(testName = "Создание проекта UI с одинаковым значением в поле Code", description = "Создаем новый проект через API," +
             " а потом создаем такой же через UI. Ждем валидационную ошибку", retryAnalyzer = Retry.class)
     public void createProjectWithExistingName() {
@@ -63,7 +63,7 @@ public class ProjectTest extends BaseTest {
         }
     }
 
-    @Tag("Smoke")
+   // @Tag("Smoke")
     @Test(testName = "Удаление проекта UI", description = "Удаляем проект по кнопке Remove")
     public void deleteProject() {
         ProjectDTO project = ProjectDTO.builder()
@@ -72,9 +72,5 @@ public class ProjectTest extends BaseTest {
                 .build();
         deleteProjectStep.deleteProjectStep(project);
         projectsPage.isProjectCreated(project).shouldNot(Condition.visible);
-                .projectCode("QA")
-                .build();
-        deleteProjectStep.deleteProjectStep(project);
-        projectsPage.deletedProjectElement(project.getProjectName()).shouldNot(Condition.visible);
     }
 }
