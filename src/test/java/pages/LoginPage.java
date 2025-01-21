@@ -15,7 +15,6 @@ public class LoginPage {
         log.info("Opening login page for authorization");
         open("login");
     }
-
     public void login() {
         log.info("Enter password and username");
         $(USER).setValue("rustam.shafikov87@gmail.com");

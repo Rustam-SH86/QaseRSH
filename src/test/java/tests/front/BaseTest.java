@@ -70,7 +70,6 @@ public class BaseTest {
         createNewProjectStep = new CreateNewProjectStep(projectsPage, loginPage);
         deleteProjectStep = new DeleteProjectStep(projectsPage, loginPage);
         createNewTestCaseStep = new CreateNewTestCaseStep(projectsPage, loginPage, testCasePage, createNewProjectStep);
-
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(true)

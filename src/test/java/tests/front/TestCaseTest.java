@@ -11,6 +11,7 @@ import tests.front.BaseTest;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
 public class TestCaseTest extends BaseTest {
     @Test(testName = "Создание нового тест-кейса", description = "Сначала создаем новый проект и далее новый тест-кейс, в конце " +
             "удаляем проект через API")

@@ -22,7 +22,6 @@ public class TestCasePage {
     public SelenideElement isTestCaseCreated(ProjectDTO projectDTO) {
      return $(By.cssSelector("a[aria-label='Open the test case " + projectDTO.getProjectCode() + "-1']"));
    }
-
     public void createTestCase(TestCaseDTO testCaseDTO) {
         log.info("Create new test case");
         createNewCaseButton.shouldBe(Condition.visible).click();
@@ -37,6 +36,4 @@ public class TestCasePage {
         new Picklist("Automation status").selectOptions(testCaseDTO.getAutomationStatus());
         saveCaseButton.click();
     }
-
-
 }

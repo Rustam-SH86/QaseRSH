@@ -25,7 +25,6 @@ public class ProjectsPage {
     public SelenideElement isProjectCreated(ProjectDTO projectDTO) {
         return $(By.xpath("//h1[contains(text(), '" + projectDTO.getProjectName() + "')]"));
     }
-
     public ProjectsPage openPage() {
         log.info("Open base page");
         open("projects");

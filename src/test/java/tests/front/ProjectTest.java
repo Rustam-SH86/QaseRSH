@@ -12,7 +12,6 @@ import utils.Retry;
 
 import static org.testng.Assert.*;
 
-
 public class ProjectTest extends BaseTest {
     @Test(testName = "Авторизация", description = "Авторизация валидными данными")
     @Tag("Smoke")
