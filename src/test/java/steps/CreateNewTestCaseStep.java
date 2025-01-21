@@ -18,7 +18,6 @@ public class CreateNewTestCaseStep {
         this.testCasePage = testCasePage;
         this.createNewProjectStep = createNewProjectStep;
     }
-
     public void createNewTestCase(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
         projectsPage.openPage();
         loginPage.login();

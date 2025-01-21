@@ -1,15 +1,12 @@
 package tests.api.tests;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import tests.api.adapters.ProjectApi;
 import tests.api.models.CreateProjectQase;
 import tests.api.models.CreateProjectResponse;
 import tests.api.models.DeleteProjectResponse;
-
 import static org.testng.Assert.*;
-
 
 public class ProjectApiTest {
     @Test(testName = "Создание проекта через API", description = "Задаем параметры для создания нового проекта")
@@ -21,13 +18,11 @@ public class ProjectApiTest {
                 .description("This is a test project.")
                 .access("all")
                 .build();
-
         CreateProjectResponse response = ProjectApi.createProject(createProjectRequest);
         assertNotNull(response, "Response should not be null.");
         assertTrue(response.getStatus(), "Response status should be true.");
         assertNotNull(response.getResult(), "Result should not be null.");
     }
-
     @Test(testName = "Удаление проекта через API", description = "Задаем имя проекта и удаляем его по средством API запроса")
     @Tag("Smoke")
     public void testDeleteProject() {
@@ -36,3 +31,4 @@ public class ProjectApiTest {
         assertTrue(response.getStatus(), "The deletion status should be true.");
     }
 }
+

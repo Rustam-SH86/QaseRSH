@@ -6,12 +6,10 @@ import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import pages.ProjectsPage;
@@ -21,7 +19,6 @@ import steps.CreateNewTestCaseStep;
 import steps.DeleteProjectStep;
 import steps.LogInStep;
 import utils.TestListener;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 @Listeners(TestListener.class)
@@ -47,7 +44,7 @@ public class BaseTest {
             options.addArguments("--incognito");
             Configuration.browserCapabilities = options;
             Configuration.browser = "chrome";
-            Configuration.headless = false;
+            Configuration.headless = true;
             Configuration.timeout = 100000;
             Configuration.clickViaJs = true;
             Configuration.baseUrl = "https://app.qase.io/";
@@ -70,7 +67,6 @@ public class BaseTest {
         createNewProjectStep = new CreateNewProjectStep(projectsPage, loginPage);
         deleteProjectStep = new DeleteProjectStep(projectsPage, loginPage);
         createNewTestCaseStep = new CreateNewTestCaseStep(projectsPage, loginPage, testCasePage, createNewProjectStep);
-
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(true)

@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+
 @Log4j2
 public class ProjectsPage {
     public SelenideElement createNewProjectButton = $(By.xpath("//span[text() = 'Create new project']"));
@@ -22,13 +23,11 @@ public class ProjectsPage {
     @Getter
     private ProjectDTO project;
 
-    public SelenideElement deletedProjectElement(String projectName) {
-        return $(By.xpath("//h1[contains(text(), '" + projectName + "')]"));
-    }
-    public SelenideElement createdProjectElement(String projectName) {
-        return $(By.xpath("//h1[contains(text(), '" + projectName + "')]"));
+    public SelenideElement isProjectCreated(ProjectDTO projectDTO) {
+        return $(By.xpath("//h1[contains(text(), '" + projectDTO.getProjectName() + "')]"));
     }
     public ProjectsPage openPage() {
+        log.info("Open base page");
         open("projects");
         return this;
     }
@@ -36,6 +35,7 @@ public class ProjectsPage {
         $(byText("Create new project")).shouldBe(Condition.exist).shouldBe(visible);
     }
     public void createNewProject(ProjectDTO project) {
+        log.info("Create new project");
         this.project = project;
         createNewProjectButton.shouldBe(visible).click();
         projectNameField.shouldBe(visible).setValue(project.getProjectName());

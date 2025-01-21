@@ -4,12 +4,10 @@ import DTO.ProjectDTO;
 import DTO.TestCaseDTO;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.testng.Tag;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import tests.api.adapters.ProjectApi;
-import tests.front.BaseTest;
 
-import static com.codeborne.selenide.Selenide.$;
+
 
 public class TestCaseTest extends BaseTest {
     @Test(testName = "Создание нового тест-кейса", description = "Сначала создаем новый проект и далее новый тест-кейс, в конце " +
@@ -33,10 +31,11 @@ public class TestCaseTest extends BaseTest {
                     .AutomationStatus("Automated")
                     .build();
             testCasePage.createTestCase(testCaseDTO);
-            testCasePage.isTestCaseCreated(project.getProjectCode()).shouldBe(Condition.visible);
+            testCasePage.isTestCaseCreated(project).shouldBe(Condition.visible);
         }
         finally {
-            ProjectApi.deleteProject("TP123");
+            System.out.println("Complited");
+            //ProjectApi.deleteProject("TP123");
         }
     }
 }

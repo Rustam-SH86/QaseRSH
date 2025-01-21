@@ -5,7 +5,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-
 @Log4j2
 public class LoginPage {
     private static final String USER = "[name=email]",
@@ -15,7 +14,6 @@ public class LoginPage {
         log.info("Opening login page for authorization");
         open("login");
     }
-
     public void login() {
         log.info("Enter password and username");
         $(USER).setValue("rustam.shafikov87@gmail.com");
