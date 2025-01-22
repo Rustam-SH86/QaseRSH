@@ -16,8 +16,8 @@ on:
 
 
 env:
-  USERNAME:${{secrets.QASE_USER}}
-  PASSWORD:${{secrets.QASE_PASSWORD}}
+  USERNAME:${{ secrets.QASE_USER}}
+  PASSWORD:${{ secrets.QASE_PASSWORD}}
 
 jobs:
   build:
@@ -58,11 +58,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
+
         
-    - name: Install Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-    - name: Build with Maven
-      run: mvn clean test
+
 
