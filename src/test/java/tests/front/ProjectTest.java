@@ -21,7 +21,6 @@ public class ProjectTest extends BaseTest {
         System.out.println("Title of the page: " + pageTitle);
         assertEquals(pageTitle, "Qase", "Title does not match!");
     }
-
     @Tag("Smoke")
     @Test(testName = "Создание проекта UI", description = "Создаем новый проект и после удаляем его через API")
     public void createProject() {
