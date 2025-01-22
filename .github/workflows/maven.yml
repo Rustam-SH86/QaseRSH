@@ -16,8 +16,8 @@ on:
 
 
 env:
-  USERNAME:${{ secrets.QASE_USER}}
-  PASSWORD:${{ secrets.QASE_PASSWORD}}
+  USERNAME: ${{ secrets.QASE_USER}}
+  PASSWORD: ${{ secrets.QASE_PASSWORD}}
 
 jobs:
   build:
