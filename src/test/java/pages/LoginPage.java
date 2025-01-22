@@ -14,10 +14,12 @@ public class LoginPage {
     private static final String USER = "[name=email]",
             PASSWORD = "[name=password]",
             BUTTON_SIGN_IN = "Sign in";
+
     public void openPage() {
         log.info("Opening login page for authorization");
         open("login");
     }
+
     public void login() {
         log.info("Enter password and username");
         $(USER).setValue(user);
