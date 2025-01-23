@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","456","Задаем параметры для создания нового проекта","Test suite","Thu Jan 23 13:43:15 GMT 2025","passed","Thu Jan 23 13:43:16 GMT 2025","tests.api.tests.ProjectApiTest","test 2","tests.api.tests.ProjectApiTest","testCreateProject"
+"","295","Задаем имя проекта и удаляем его по средством API запроса","Test suite","Thu Jan 23 13:43:16 GMT 2025","passed","Thu Jan 23 13:43:16 GMT 2025","tests.api.tests.ProjectApiTest","test 2","tests.api.tests.ProjectApiTest","testDeleteProject"
+"","43090","Сначала создаем новый проект и далее новый тест-кейс, в конце удаляем проект через API","Test suite","Thu Jan 23 13:42:32 GMT 2025","passed","Thu Jan 23 13:43:15 GMT 2025","tests.front.TestCaseTest","test 1","tests.front.TestCaseTest","createNewTestCase"
