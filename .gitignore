@@ -1,0 +1,57 @@
+# Исключаем артефакты сборки
+/target/
+*.class
+
+# Исключаем временные файлы IDE
+/.idea/
+/*.iml
+*.swp
+
+# Исключаем временные файлы операционных систем
+*.DS_Store
+Thumbs.db
+
+# Исключаем логи
+*.log
+/logs/
+/*.log.*
+
+# Исключаем файлы отчетов
+*.html
+*.xml
+*.json
+*.css
+*.js
+/surefire-reports/
+
+# Исключаем скриншоты и изображения
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Исключаем архивы и бинарные файлы
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Исключаем файл настроек Maven
+/.mvn/
+.settings/
+*.mvn
+
+# Исключаем временные файлы текстовых редакторов
+*.bak
+*.tmp
+*.~*
+
+# Исключаем файлы IntelliJ и Eclipse
+*.project
+*.classpath
+/.settings/
+
+# Исключаем артефакты TestNG
+test-output/
+*.suite
+*.testng-failed.xml

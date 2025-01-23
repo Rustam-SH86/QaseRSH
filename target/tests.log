@@ -1,0 +1,7 @@
+2025-01-22 20:30:13.333 INFO [TestNG-test-test 1-1] [steps.CreateNewProjectStep] - Starting the process of creating a new project: TestProject
+2025-01-22 20:30:13.346 INFO [TestNG-test-test 1-1] [steps.CreateNewProjectStep] - Opening projects page...
+2025-01-22 20:30:13.346 INFO [TestNG-test-test 1-1] [pages.ProjectsPage] - Open base page
+2025-01-22 20:31:12.144 INFO [TestNG-test-test 1-1] [steps.CreateNewProjectStep] - Logging into the application...
+2025-01-22 20:31:12.146 INFO [TestNG-test-test 1-1] [pages.LoginPage] - Enter password and username
+2025-01-22 20:31:53.266 INFO [TestNG-test-test 1-1] [steps.CreateNewProjectStep] - Creating a new project with the provided details.
+2025-01-22 20:31:53.268 INFO [TestNG-test-test 1-1] [pages.ProjectsPage] - Create new project
