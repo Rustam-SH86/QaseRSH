@@ -3,6 +3,7 @@ package tests.front;
 import dto.ProjectDTO;
 import dto.TestCaseDTO;
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Step;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import adapters.ProjectApi;

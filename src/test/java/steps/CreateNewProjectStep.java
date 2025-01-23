@@ -1,6 +1,7 @@
 package steps;
 
 import dto.ProjectDTO;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import pages.LoginPage;
 import pages.ProjectsPage;
@@ -16,6 +17,7 @@ public class CreateNewProjectStep {
         this.loginPage = loginPage;
     }
 
+    @Step("Create new project")
     public void createNewProject(ProjectDTO project) {
         log.info("Starting the process of creating a new project: {}", project.getProjectName());
         try {

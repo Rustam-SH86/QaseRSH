@@ -2,6 +2,7 @@ package steps;
 
 import dto.ProjectDTO;
 import dto.TestCaseDTO;
+import io.qameta.allure.Step;
 import pages.LoginPage;
 import pages.ProjectsPage;
 import pages.TestCasePage;
@@ -19,12 +20,7 @@ public class CreateNewTestCaseStep {
         this.createNewProjectStep = createNewProjectStep;
     }
 
-    public void createTestCaseSt(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
-        projectsPage.openPage();
-        loginPage.login();
-        projectsPage.createNewProject(projectDTO);
-        testCasePage.createTestCase(testCaseDTO);
-    }
+    @Step("Create new test case")
     public void createTestCaseStep(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
         createNewProjectStep.createNewProject(projectDTO);
         testCasePage.createTestCase(testCaseDTO);
