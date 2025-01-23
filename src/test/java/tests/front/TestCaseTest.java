@@ -1,11 +1,11 @@
 package tests.front;
 
-import DTO.ProjectDTO;
-import DTO.TestCaseDTO;
+import dto.ProjectDTO;
+import dto.TestCaseDTO;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
-import tests.api.adapters.ProjectApi;
+import adapters.ProjectApi;
 
 
 public class TestCaseTest extends BaseTest {
@@ -18,7 +18,6 @@ public class TestCaseTest extends BaseTest {
                     .projectName("TestProject")
                     .projectCode("TP123")
                     .build();
-            createNewProjectStep.createNewProject(project);
             TestCaseDTO testCaseDTO = TestCaseDTO.builder()
                     .Status("Draft")
                     .Type("Smoke")
@@ -29,10 +28,9 @@ public class TestCaseTest extends BaseTest {
                     .IsFlaky("Yes")
                     .AutomationStatus("Automated")
                     .build();
-            testCasePage.createTestCase(testCaseDTO);
+            createNewTestCaseStep.createTestCaseStep(project, testCaseDTO);
             testCasePage.isTestCaseCreated(project).shouldBe(Condition.visible);
-        }
-        finally {
+        } finally {
             ProjectApi.deleteProject("TP123");
         }
     }

@@ -1,12 +1,13 @@
 package tests.front;
-import DTO.ProjectDTO;
+
+import dto.ProjectDTO;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
-import tests.api.adapters.ProjectApi;
-import tests.api.models.CreateProjectQase;
-import tests.api.models.CreateProjectResponse;
+import adapters.ProjectApi;
+import models.CreateProjectQase;
+import models.CreateProjectResponse;
 import utils.Retry;
 
 import static org.testng.Assert.*;
@@ -21,6 +22,7 @@ public class ProjectTest extends BaseTest {
         System.out.println("Title of the page: " + pageTitle);
         assertEquals(pageTitle, "Qase", "Title does not match!");
     }
+
     @Tag("Smoke")
     @Test(testName = "Создание проекта UI", description = "Создаем новый проект и после удаляем его через API")
     public void createProject() {

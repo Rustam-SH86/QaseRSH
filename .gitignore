@@ -24,11 +24,18 @@ Thumbs.db
 *.js
 /surefire-reports/
 
+# Исключаем файлы Allure Reports
+/allure-results/
+/allure-report/
+/allure-reports/
+
 # Исключаем скриншоты и изображения
 *.png
 *.jpg
 *.jpeg
 *.gif
+/screenshots/
+/videos/
 
 # Исключаем архивы и бинарные файлы
 *.zip
@@ -40,18 +47,34 @@ Thumbs.db
 /.mvn/
 .settings/
 *.mvn
+dependency-reduced-pom.xml
+release.properties
 
 # Исключаем временные файлы текстовых редакторов
 *.bak
 *.tmp
 *.~*
 
-# Исключаем файлы IntelliJ и Eclipse
+# Исключаем файлы IntelliJ IDEA и Eclipse
 *.project
 *.classpath
 /.settings/
+/out/
+/*.iws
 
 # Исключаем артефакты TestNG
 test-output/
 *.suite
 *.testng-failed.xml
+
+# Исключаем временные файлы CI/CD
+/.github/workflows/*.log
+/.github/workflows/*.tmp
+
+# Исключаем файлы Playwright и Selenium
+/trace.zip
+*.har
+
+# Исключаем файлы Docker
+*.env
+docker-compose.override.yml

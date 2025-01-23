@@ -1,10 +1,8 @@
-package tests.api.models;
+package models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
-
-import javax.xml.transform.Result;
 
 @Data
 public class CreateProjectResponse {

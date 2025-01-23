@@ -1,7 +1,7 @@
 package steps;
 
-import DTO.ProjectDTO;
-import DTO.TestCaseDTO;
+import dto.ProjectDTO;
+import dto.TestCaseDTO;
 import pages.LoginPage;
 import pages.ProjectsPage;
 import pages.TestCasePage;
@@ -18,10 +18,15 @@ public class CreateNewTestCaseStep {
         this.testCasePage = testCasePage;
         this.createNewProjectStep = createNewProjectStep;
     }
-    public void createNewTestCase(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
+
+    public void createTestCaseSt(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
         projectsPage.openPage();
         loginPage.login();
         projectsPage.createNewProject(projectDTO);
+        testCasePage.createTestCase(testCaseDTO);
+    }
+    public void createTestCaseStep(ProjectDTO projectDTO, TestCaseDTO testCaseDTO) {
+        createNewProjectStep.createNewProject(projectDTO);
         testCasePage.createTestCase(testCaseDTO);
     }
 }

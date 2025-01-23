@@ -1,8 +1,8 @@
 package pages;
 
-import DTO.ProjectDTO;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import dto.ProjectDTO;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
@@ -26,14 +26,13 @@ public class ProjectsPage {
     public SelenideElement isProjectCreated(ProjectDTO projectDTO) {
         return $(By.xpath("//h1[contains(text(), '" + projectDTO.getProjectName() + "')]"));
     }
+
     public ProjectsPage openPage() {
         log.info("Open base page");
         open("projects");
         return this;
     }
-    public void waitTillOpened() {
-        $(byText("Create new project")).shouldBe(Condition.exist).shouldBe(visible);
-    }
+
     public void createNewProject(ProjectDTO project) {
         log.info("Create new project");
         this.project = project;

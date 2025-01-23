@@ -1,6 +1,6 @@
 package steps;
 
-import DTO.ProjectDTO;
+import dto.ProjectDTO;
 import pages.LoginPage;
 import pages.ProjectsPage;
 

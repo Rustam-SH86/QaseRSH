@@ -1,7 +1,6 @@
 package steps;
 
-import DTO.ProjectDTO;
-import io.qameta.allure.Step;
+import dto.ProjectDTO;
 import lombok.extern.log4j.Log4j2;
 import pages.LoginPage;
 import pages.ProjectsPage;

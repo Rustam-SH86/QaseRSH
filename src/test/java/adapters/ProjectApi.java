@@ -1,14 +1,15 @@
-package tests.api.adapters;
+package adapters;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import static io.restassured.RestAssured.given;
-
 import lombok.extern.log4j.Log4j2;
-import tests.api.models.CreateProjectQase;
-import tests.api.models.CreateProjectResponse;
-import tests.api.models.DeleteProjectResponse;
+import models.CreateProjectQase;
+import models.CreateProjectResponse;
+import models.DeleteProjectResponse;
+
+import static io.restassured.RestAssured.given;
 
 
 @Log4j2
@@ -37,6 +38,7 @@ public class ProjectApi {
                 .extract()
                 .as(CreateProjectResponse.class);
     }
+
     public static DeleteProjectResponse deleteProject(String code) {
         log.info("Send API request for deleting new project");
         return given()
